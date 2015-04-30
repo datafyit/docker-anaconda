@@ -10,3 +10,6 @@ build:
 
 run:
 	docker run -t -i --dns 8.8.8.8 $(IMAGE_NAME)
+
+notebook:
+	docker run --rm -t -i --dns 8.8.8.8 -p 8888:8888 -v /home:/notebooks $(IMAGE_NAME) /anaconda/bin/ipython notebook --notebook-dir=/notebooks --no-browser --ip=*
